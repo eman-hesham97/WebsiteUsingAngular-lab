@@ -1,0 +1,66 @@
+<!-- <p>products works!</p> -->
+<!-- <h1 class="title">
+    {{storeName}}
+</h1>
+<img [src]="imageSrc" [alt]="imageAlt" />
+<h3 class="offer">
+    {{"We offer an explicit discount of:" +  Discount}}
+</h3> -->
+
+<!-- ********************************************Q1 and Q of percent**************************************************** -->
+<!-- <h3 *ngIf="Discount !== 'No Discount' ; then show ; else hidden "></h3>
+<ng-template #show>
+    <h3> {{Discount | percent}}</h3>
+</ng-template>
+
+<ng-template #hidden>
+
+</ng-template>
+<br> -->
+
+<!-- ***************************************Q2=dropdownlist********************************************************** -->
+<!-- <h3 class="chooseCategory">Choose A Catogroy: </h3>
+<select #cricket (change)="update($event)">
+	<option value="default"> select</option>
+	<option *ngFor="let Catogroy of CategoryList" [value]="Catogroy">
+		{{Catogroy.Name}}
+	</option>
+</select> -->
+
+<!-- ***************************************Q3=table********************************************************** -->
+<button (click)="BtnClicked()">Buy</button>
+<button routerLink="/withDiscount">With Discount</button>
+<button routerLink="/withoutDiscount">Without Discount</button>
+<!-- withDiscount -->
+<div *ngIf="myvar; then showTable ; else hiddenTable "></div>
+
+<ng-template #showTable>
+<table>
+    <thead>
+        <th>Item  </th>
+        <th>Price </th>
+		<th>Quantity </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items">
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+			<td>{{item.Quantity}}</td>
+
+        </tr>
+    </tbody>
+</table>
+</ng-template>
+
+<ng-template #hiddenTable>
+	<h1 class="thnQtext" >Thanks for purchasing from our Store, {{nameOfClient}}</h1>
+</ng-template>
+<!-- *******************************************Q4=twowaybinding****************************************************** -->
+<!-- <h3 class="chooseCategory">Two-way Binding</h3>
+<input type="text" [(ngModel)]="ClientName"/>
+{{ClientName}}
+<br> -->
+<!-- *****************************************Q5=pipesUppercase*********************************************** -->
+<!-- <p>Client name in uppercase: {{nameOfClient | uppercase}}</p>
+<br> -->
+<!-- ******************************************Q3=table********************************************************** -->

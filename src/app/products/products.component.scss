@@ -1,0 +1,51 @@
+.title{
+    margin-left: 40%;
+}
+.offer{
+    margin-left: 34%;
+}
+.offer:hover{
+    margin-left: 30%;
+    font-size: 30px;
+    color: orangered;
+    cursor: not-allowed;
+}
+img {
+    height: 200px;
+    width: 200px;
+    margin-left: 40%;
+  }
+.chooseCategory{
+      color: blue;
+  }
+
+table{
+    margin-left: 38%;
+}
+td{
+    font-size: 20px;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    padding: 2px;
+    text-align: center;
+}
+tr{
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    padding: 2px;
+}
+th{
+    font-size: 30px;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    padding: 2px;
+    color: blue;
+    text-align: center;
+}
+.thnQtext{
+    color: firebrick;
+    margin-left: 20%;
+}

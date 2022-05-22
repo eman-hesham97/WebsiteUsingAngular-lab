@@ -1,0 +1,33 @@
+<!-- <p>users works!</p> -->
+<h1>Available Users</h1>
+<div class="cardContainer">
+    <!-- {{"Name is: " + user.name}} {{"Username is: " + user.username}} {{"Email is: " + user.email}} -->
+    <table class="table" id='tab'>
+        <thead>
+        <!-- <tr> -->
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+        <!-- </tr> -->
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{ user.name }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- <div class="card" *ngFor="let user of users">
+        <div class="card-body">
+          <h5 class="card-title">Name: {{ user.name }}</h5>
+          <div class="card-text">
+            <h5>Username: {{ user.username }}</h5>
+            <h5>Email: {{ user.email }}</h5>
+            
+          </div>
+        </div>
+      </div> -->
+</div>
+
+{{errorMessage}}

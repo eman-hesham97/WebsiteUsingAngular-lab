@@ -1,0 +1,55 @@
+<div class="container">
+    <h1>Register</h1>
+    <form #userForm="ngForm" novalidate (ngSubmit)="SaveData()">
+        <!--  -->
+        {{userForm.value |json}}
+        <br>
+        {{userModel|json}}
+        <div class="form-group">
+            <label>Name</label>
+            <input placeholder="eman" pattern="[a-zA-Z]+" type="text" name="txtName" required [class.is-invalid]="name.invalid && name.touched"  #name="ngModel"  [(ngModel)]="userModel.name" class="form-control">
+            <div *ngIf="name.errors && name.touched">
+                <small class="text-danger" *ngIf="name.errors['required']" [class.d-none]="name.valid || name.untouched">Name is required</small>
+                <small class="text-danger" *ngIf="name.errors['pattern']">Name can only include uppercase and lowercase letters</small>
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input placeholder="name@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="email" name="txtEmail" required [class.is-invalid]="email.invalid && email.touched" [(ngModel)]="userModel.email"  #email="ngModel"  class="form-control">
+            <div *ngIf="email.errors && email.touched">
+                <small class="text-danger" *ngIf="email.errors['required']" [class.d-none]="email.valid || email.untouched">Email is required</small>
+                <small class="text-danger" *ngIf="email.errors['pattern']">Invalid Email</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="txtPassword" [class.is-invalid]="password.invalid && password.touched" required pattern="^\d{6}$" [(ngModel)]="userModel.password"  #password="ngModel"  class="form-control">
+            <div *ngIf="password.errors && password.touched">
+            <small class="text-danger"  *ngIf="password.errors['required']" [class.d-none]="password.valid || password.untouched">Password is required</small>
+            <small class="text-danger" *ngIf="password.errors['pattern']">Password must be at least 6 characters</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" name="txtconfPassword" [(ngModel)]="userModel.confpassword"  #confpassword="ngModel"  class="form-control">
+            <div *ngIf="confpassword !== password && confpassword.touched">
+            <small class="text-danger">Password doesn't match</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p>Where did you hear about us ?</p>
+            <select class="custom-select" name="ddlPlaces"[(ngModel)]="userModel.place" #place="ngModel" >
+                <option *ngFor="let place of places">
+                    {{place}}
+                </option>
+            </select>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Register" [disabled]="userForm.form.invalid">
+
+    </form>
+</div>
